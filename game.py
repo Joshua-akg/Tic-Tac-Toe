@@ -1,3 +1,4 @@
+import time
 from player import HumanPlayer, ComputerPlayer
 
 class TicTacToe:
@@ -79,7 +80,7 @@ def play(game, xPlayer, oPlayer, printGame=True):
                                     #Play the player's move
         if game.makeMove(square, letter):
             if printGame:           #Print the board
-                print(letter+f' has played on square {square}')
+                print("\n"+letter+f' has played on square {square}')
                 game.printBoard()
                 print('')
 
@@ -91,9 +92,43 @@ def play(game, xPlayer, oPlayer, printGame=True):
 
     print('It\'s a TIE!')
 
+    # @staticmethod
+def printMenu():
+    print("Welcome to TIC-TAC-TOE\n")
+    print("You may choose to play either against the computer randomly (PvC), or against another human player (PvP)\n")
+
+    choice = 0
+
+    while (choice != 1) and (choice != 2):
+        print("\nPlease choose from the options below: \n(1) Player vs Player \n(2) Player vs Computer\n")
+
+        try:
+            # choice = input("Choice: ")
+            choice = int(input("Choice: "))
+
+            # print(f"Choice is {choice}")
+
+            if (choice != 1) and (choice != 2):
+                raise ValueError
+        except:
+            choice = 0
+
+    return choice
+
+
+
 if __name__ == "__main__":
+    print("")
+    choice = printMenu()
+    print("")
+
+    if choice == 2:
+        oPlayer = ComputerPlayer('O')
+    else:
+        oPlayer = HumanPlayer('O')
+
     xPlayer = HumanPlayer('X')
-    oPlayer = ComputerPlayer('O')
+    # oPlayer = ComputerPlayer('O')
     g = TicTacToe()
     play(g, xPlayer, oPlayer, printGame=True)
             

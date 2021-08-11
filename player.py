@@ -1,4 +1,5 @@
 import math
+import time
 import random
 
 class Player: 
@@ -14,6 +15,8 @@ class ComputerPlayer(Player):
         super().__init__(letter)
 
     def get_move(self, game):
+        print("Computer is Thinking...")
+        time.sleep(0.8)
         square = random.choice(game.availableMoves())
         return square
 
