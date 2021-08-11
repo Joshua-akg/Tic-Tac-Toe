@@ -111,7 +111,7 @@ def printMenu():
             if (choice != 1) and (choice != 2):
                 raise ValueError
         except:
-            print("Invalid Choice Entered! Try Again.")
+            print("\nInvalid Choice Entered! Try Again.\n")
             choice = 0
 
     return choice
