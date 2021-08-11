@@ -95,12 +95,12 @@ def play(game, xPlayer, oPlayer, printGame=True):
     # @staticmethod
 def printMenu():
     print("Welcome to TIC-TAC-TOE\n")
-    print("You may choose to play either against the computer randomly (PvC), or against another human player (PvP)\n")
+    print("You may choose to play either against the random computer, or against another human player \n")
 
     choice = 0
 
     while (choice != 1) and (choice != 2):
-        print("\nPlease choose from the options below: \n(1) Player vs Player \n(2) Player vs Computer\n")
+        print("Please choose from the options below: \n(1) Player vs Player \n(2) Player vs Computer\n")
 
         try:
             # choice = input("Choice: ")
@@ -111,6 +111,7 @@ def printMenu():
             if (choice != 1) and (choice != 2):
                 raise ValueError
         except:
+            print("Invalid Choice Entered! Try Again.")
             choice = 0
 
     return choice
@@ -128,7 +129,7 @@ if __name__ == "__main__":
         oPlayer = HumanPlayer('O')
 
     xPlayer = HumanPlayer('X')
-    # oPlayer = ComputerPlayer('O')
+
     g = TicTacToe()
     play(g, xPlayer, oPlayer, printGame=True)
             
