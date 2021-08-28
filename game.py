@@ -6,12 +6,12 @@ class TicTacToe:
         self.currentWinner = None
 
     def printBoard(self):
-        print("This is the layout of the board:")
         for row in [self.board[i*3 : (i+1)*3] for i in range(3)]:
             print('| ' + ' | '.join(row) + ' |')
 
     @staticmethod
     def printBoardNums():
+        print("This is the layout of the board:\n")
         numberBoard = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
         for row in numberBoard:
             print('| '+' | '.join(row) + ' |')
