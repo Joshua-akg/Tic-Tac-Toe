@@ -6,6 +6,7 @@ class TicTacToe:
         self.currentWinner = None
 
     def printBoard(self):
+        print("This is the layout of the board:")
         for row in [self.board[i*3 : (i+1)*3] for i in range(3)]:
             print('| ' + ' | '.join(row) + ' |')
 
